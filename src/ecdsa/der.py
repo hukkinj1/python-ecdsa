@@ -110,7 +110,7 @@ def encode_oid(first, second, *pieces):
 
 
 def encode_sequence(*encoded_pieces):
-    total_len = sum([len(p) for p in encoded_pieces])
+    total_len = sum(len(p) for p in encoded_pieces)
     return b("\x30") + encode_length(total_len) + b("").join(encoded_pieces)
 
 
